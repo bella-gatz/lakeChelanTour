@@ -1,0 +1,56 @@
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+h1 {
+    font-family: Playfair Display, Verdana, sans-serif;
+}
+
+p, button {
+    font-family: Lato, Verdana, sans-serif;
+}
+ 
+button {
+    background-color: darkorange;
+    border-radius: 30px;
+    border: none;
+    color: black;
+    font-size: 20px;
+    padding: 1rem;
+    width: 25%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    color: white;
+}
+
+.nav {
+    background-color: darkseagreen;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.logo {
+    width: 50%;
+    padding: 1rem;
+}
+
+.book {
+ 
+}
