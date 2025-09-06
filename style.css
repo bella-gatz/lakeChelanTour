@@ -7,7 +7,7 @@ html {
     margin: 0;
 }
 
-.centeredLow {
+.des {
     position: absolute;
     top: 75%;
     left: 50%;
@@ -26,8 +26,7 @@ h1 {
     size: 26px;
 }
 
-p,
-button {
+p,button {
     font-family: "Lato", Verdana, sans-serif;
     font-size: 18px;
 }
@@ -114,4 +113,42 @@ nav {
     .logo {
         width: 75%;
     }
+}
+
+@media (min-width: 1200px ) {
+    .des {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+
+    h1 {
+        font-size: 40pt;
+    }
+
+    p {
+        font-size: 25pt;
+    }
+}
+
+@media (max-height: 500px ) {
+    .des {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+/* 
+    h1 {
+        font-size: 40pt;
+    }
+
+    p {
+        font-size: 25pt;
+    } */
 }
