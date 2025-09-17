@@ -1,0 +1,152 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: relative;
+    margin: 0;
+}
+
+.des {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+body {
+    background-color: antiquewhite;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Old Standard TT", Verdana, sans-serif;
+    size: 26px;
+}
+
+p,button {
+    font-family: "Lato", Verdana, sans-serif;
+    font-size: 18px;
+}
+
+.bookButton button {
+    background-color: #F4C430;
+    color: #1F2937;
+    border-radius: 30px;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bookButton button:hover {
+    transform: scale(1.05);
+    color: white;
+    background-color: #E5B700;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(6px);
+}
+
+.logo {
+    width: 30%;
+    max-height: 75%;
+}
+
+.fa {
+    padding: 12px;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #405DE6;
+    color: black;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.fa:hover {
+    transform: scale(1.1);
+    color: white;
+    background-color: #3045ae;
+}
+
+.homeimg {
+    position: static;
+}
+
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 12pt;
+    }
+
+    p {
+        font-size: 8pt;
+    }
+
+    .bookButton {
+        flex: unset;
+    }
+
+    .logo {
+        width: 75%;
+    }
+}
+
+@media (min-width: 1200px ) {
+    .des {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+
+    h1 {
+        font-size: 40pt;
+    }
+
+    p {
+        font-size: 25pt;
+    }
+}
+
+@media (max-height: 500px ) {
+    .des {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+/* 
+    h1 {
+        font-size: 40pt;
+    }
+
+    p {
+        font-size: 25pt;
+    } */
+}

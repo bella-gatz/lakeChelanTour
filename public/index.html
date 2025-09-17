@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <style>
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #ffffff;
+
+    /* background-color: DodgerBlue; */
+    }
+
+    .flex-container > img {
+        opacity: 75%;
+        width: 100%;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+        transition: all 1s 0.05s ease;
+    }
+
+    .flex-container > img:hover {
+        opacity: 100%;
+        cursor: pointer;
+    }
+
+    @media (min-width: 600px) {
+        .flex-container > img {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: 800px) {
+        .flex-container > img {
+            width: 33.33%;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .flex-container > img {
+            width: 20%;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <img src="images/russBussFrame.jpeg" alt="Russ Buss Logo" width="100%">
+        </div>
+        <div class="bookButton">
+            <button type="button">Book Now!</button>
+        </div>
+        <div class="socials">
+            <a class="fa fa-instagram" href="https://www.instagram.com/lakechelantour/?utm_source=ig_embed&amp;utm_campaign=loading" target="_blank"><a>
+        </div>
+    </nav>
+    <div class="gallerywrapper">
+        <h1>Photo Gallery</h1>
+        <!-- <div class="flex-container"> -->
+
+            <!-- organize by winery -->
+            <!-- others as gallery -->
+            <!-- maybe a upload portal for dad? -->
+            
+            <!-- Server: TODO debug-->
+            <div id="gallery"></div>
+            <script>
+                async function loadGallery() {
+                    const res = await fetch("/gallery"); // 'server.js'
+                    const galleryData = await res.json();
+                    const galleryContainer = document.getElementById("gallery");
+
+                    for (const folder in galleryData) {
+
+                        const heading = document.createElement("h2");
+                        heading.textContent = folder;
+                        galleryContainer.appendChild(heading);
+
+                        const div = document.createElement("div");
+                        div.className = "flex-container";
+                        galleryContainer.append(div);
+
+                        galleryData[folder].forEach(photo => {
+                            const img = document.createElement("img");
+                            img.src = `images/gallery/${folder}/${photo}`;
+                            img.alt = `${folder} - ${photo}`;
+                            // img.style.maxWidth = "200px";
+                            // img.style.margin = "5px";
+                            div.appendChild(img);
+                        });
+                    }
+                }
+                loadGallery();
+            </script>
+            <!-- Manual (w/o server): TODO-->
+            <!-- <h2>Benson Winery</h2>
+            <div class="flex-container"> 
+                <img src="images/gallery/Benson/IMG_0008.JPG">
+            </div> -->
+
+        <!-- </div> -->
+    </div>
+</body>
+
+</html>
